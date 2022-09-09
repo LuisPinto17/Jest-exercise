@@ -16,21 +16,24 @@ let oneEuroIs = {
 }
 
 function fromDollarToYen(numero){
-
+    return ((numero / oneEuroIs.USD) * oneEuroIs.JPY)
 }
 
 function fromEuroToDollar(numero){
-    
+    return (numero * oneEuroIs.USD)
 }
 
-function fromYanToPound(numero){
-    
+function fromYenToPound(numero){
+    return ((numero / oneEuroIs.JPY) * oneEuroIs.GBP)
 }
 
 // just a console log for ourselves.
 console.log(sum(7,3))
+console.log(fromYenToPound(200))
+console.log(fromEuroToDollar(3))
+console.log(fromDollarToYen(3))
 console.log(celular("04149024039"))
 // export the function to be used on other files 
 // (similar to the keyword `export` when using webpack)
-module.exports = { sum,celular };
+module.exports = { sum,celular,fromYenToPound,fromEuroToDollar,fromDollarToYen };
 
